@@ -21,9 +21,9 @@ def totalN10State(x,y,z,n):
     return 1/np.sqrt(2*np.pi)*azimuthalN10State(np.arctan2(np.sqrt(x**2+y**2),z))*radialN10State(np.sqrt(x**2+y**2+z**2),n)
 def total100State(x,y,z):
     return 1/(np.sqrt(np.pi)*a_0**(3/2))*np.exp(-np.sqrt(x**2+y**2+z**2)/a_0)
-sum()
+
 # creating a dummy dataset
-nx,ny,nz=(10,10,10)
+
 m_e = 9.109e-31
 h_bar=1.005e-34
 e=1.6e-19
@@ -52,7 +52,7 @@ yy=yy.flatten()
 zz=zz.flatten()
 alpha_value = 0.01
 s_value = 5
-ax = fig.add_subplot(221, projection='3d')
+ax = fig.add_subplot(121, projection='3d')
 colo = (total100State(xx,yy,zz))**2
 colo = colo/np.max(colo)
 color_map = cm.ScalarMappable(cmap=cm.hsv)
@@ -70,7 +70,7 @@ ax.set_xlabel('X (a_0)')
 ax.set_ylabel('Y (a_0)')
 ax.set_zlabel('Z (a_0)')
 
-ax = fig.add_subplot(222, projection='3d')
+ax = fig.add_subplot(122, projection='3d')
 colo = (totalN10State(xx,yy,zz,2))**2
 colo = colo/np.max(colo)
 color_map = cm.ScalarMappable(cmap=cm.hsv)
