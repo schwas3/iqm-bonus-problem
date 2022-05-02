@@ -65,8 +65,8 @@ fig = plt.figure(figsize=(10, 10))
 xx=xx.flatten()
 yy=yy.flatten()
 zz=zz.flatten()
-alpha_value = 0.05
-s_value = 5
+alpha_value = 0.07
+s_value = 12
 # ax = fig.add_subplot(122, projection='3d')
 # colo = (totalN10State(xx,yy,zz,3))**2
 # # colo = (total100State(xx,yy,zz))**2
@@ -116,6 +116,7 @@ def update(val):
     img.set_color(cm.hsv(colo))
 # e_field_mag.on_changed(update)
 # plt.colorbar(color_map)
-animation = matplotlib.animation.FuncAnimation(fig,func=update,frames=np.linspace(0,1,100),interval=10,repeat=False)
+animation = matplotlib.animation.FuncAnimation(fig,func=update,frames=np.linspace(0,0.25,26),interval=5,repeat=False)
+animation.save('animation1.gif')
 # displaying plot
 plt.show()
